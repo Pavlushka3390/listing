@@ -21,7 +21,7 @@ const ListItem = ({ item }) => (
   <div className="item">
     <div className="item-image">
       <a href={item.url || "#"}>
-        <img src={(item.MainImage && item.MainImage.url_570xN) || "none.jpg"} alt='картинка' />
+        <img src={ item.MainImage && item.MainImage.url_570xN } alt='картинка' />
       </a>
     </div>
     <div className="item-details">
