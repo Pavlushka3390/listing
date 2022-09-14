@@ -21,7 +21,7 @@ const ListItem = ({ item }) => (
   <div className="item">
     <div className="item-image">
       <a href={item.url || "#"}>
-        <img src={ item.MainImage && item.MainImage.url_570xN } alt='картинка' />
+        <img src={ item.MainImage.url_570xN } alt='картинка' />
       </a>
     </div>
     <div className="item-details">
@@ -51,7 +51,7 @@ const Listing = ({ items = [] }) => {
   return (
     <div className="item-list">
       {
-        items.map(item => (
+        items.filter(({ state }) => state !== "removed").map(item => (
           <ListItem item={item} key={item.listing_id} />
         ))
       }
